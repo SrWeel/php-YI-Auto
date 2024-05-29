@@ -20,7 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <p>
-
         Para más información, puedes contactarnos a través de nuestro formulario de contacto o seguirnos en nuestras redes sociales.
 
     </p>
