@@ -7,11 +7,15 @@
 </p>
 
 Este proyecto es una implementación de prueba de un CRUD (Crear, Leer, Actualizar, Eliminar) utilizando el framework Yii en PHP.
-
-Integrantes del Proyecto
-srweel (Desarrollador Principal)
-Jonnathan Olalla (Colaborador)
-Jossue Ulloa (Colaborador)
+<br>
+<br>
+<p align="center">
+ <h1 align="center">Integrantes del Proyecto</h1>
+<br>
+srweel (Desarrollador Principal)<br>
+Jonnathan Olalla (Colaborador)<br>
+Jossue Ulloa (Colaborador)<br>
+</p>
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
 [![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
