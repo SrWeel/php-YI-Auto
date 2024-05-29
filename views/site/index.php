@@ -4,9 +4,7 @@
 
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,17 +16,36 @@ $this->title = 'My Yii Application';
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background: #f5f5f5;
         }
-        .navbar-nav a {
-            margin-right: 15px;
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .jumbotron {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+        }
+        .jumbotron h1 {
+            font-size: 3.5rem;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
         }
         .container {
             flex: 1;
-        }
-        footer {
-            background-color: #f8f9fa;
-            padding: 20px 0;
-            text-align: center;
         }
     </style>
 </head>
@@ -38,24 +55,37 @@ $this->title = 'My Yii Application';
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+        </div>
     </nav>
     <div class="site-index">
         <div class="jumbotron text-center bg-transparent mt-5 mb-5">
             <h1 class="display-4">Bienvenido a YII Framework</h1>
         </div>
         <div class="body-content">
-            <div class="row">
-                <div class="col-lg-4 mb-3">
-                    <h2>Productos</h2>
-                    <p>Metodos para los productos </p>
-                    <p><a class="btn btn-outline-secondary" href="/crud1">Ir a los Productos &raquo;</a></p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h2 class="card-title">Productos</h2>
+                                <p class="card-text">Métodos para los productos.</p>
+                                <a href="crud1" class="btn btn-outline-secondary">Ir a los Productos &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h2 class="card-title">Usuarios</h2>
+                                <p class="card-text">Métodos para los usuarios.</p>
+                                <a href="/crud2" class="btn btn-outline-secondary">Ir a los Usuarios &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Añadir más tarjetas según sea necesario -->
                 </div>
-                <div class="col-lg-4 mb-3">
-                    <h2>Usuarios</h2>
-                    <p>Metodos para los usuarios</p>
-                    <p><a class="btn btn-outline-secondary" href="/crud2">Ir a los usuarios &raquo;</a></p>
-                </div>
-               
             </div>
         </div>
     </div>
@@ -67,7 +97,3 @@ $this->title = 'My Yii Application';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-        </div>
-
-    </div>
-</div>
