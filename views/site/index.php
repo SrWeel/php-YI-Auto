@@ -49,5 +49,13 @@ $this->title = 'My Yii Application';
             </div>
         </div>
 
+        <!-- Nuevo bloque para el enlace a la lista de productos -->
+        <div class="row mt-5">
+            <div class="col-lg-12 text-center">
+                <h2>Listado de Productos</h2>
+                <p><a class="btn btn-lg btn-primary" href="<?= Yii::$app->urlManager->createUrl(['site/listar-productos']) ?>">Ver Lista de Productos</a></p>
+            </div>
+        </div>
+
     </div>
 </div>

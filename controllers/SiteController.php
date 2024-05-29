@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\tbl_producto;
 
 class SiteController extends Controller
 {
@@ -124,5 +125,19 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    /**
+     * Displays list of products.
+     *
+     * @return string
+     */
+    public function actionListarProductos()
+    {
+        $productos = tbl_producto::find()->all(); // Recuperar todos los productos
+
+        return $this->render('listar-productos', [
+            'productos' => $productos,
+        ]);
     }
 }
