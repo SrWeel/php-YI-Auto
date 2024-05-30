@@ -16,39 +16,35 @@ use Yii;
  * @property string $usu_estado
  *
  * @property TblTipoUsuario $tusu
- * @property TblProductoUsuario $usu
+ *
  */
-class tbl_usuario extends \yii\db\ActiveRecord
-{
+class tbl_usuario extends \yii\db\ActiveRecord {
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'tbl_usuario';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['tusu_id', 'usu_cedula', 'usu_nombre', 'usu_correo', 'usu_contra', 'usu_estado'], 'required'],
             [['tusu_id'], 'integer'],
             [['usu_cedula'], 'string', 'max' => 10],
             [['usu_nombre', 'usu_correo', 'usu_contra'], 'string', 'max' => 150],
             [['usu_estado'], 'string', 'max' => 1],
-            [['tusu_id'], 'exist', 'skipOnError' => true, 'targetClass' => TblTipoUsuario::class, 'targetAttribute' => ['tusu_id' => 'tusu_id']],
-            [['usu_id'], 'exist', 'skipOnError' => true, 'targetClass' => TblProductoUsuario::class, 'targetAttribute' => ['usu_id' => 'usu_id']],
+            [['tusu_id'], 'exist', 'skipOnError' => true, 'targetClass' => tbl_tipo_usuario::class, 'targetAttribute' => ['tusu_id' => 'tusu_id']],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'usu_id' => 'Usu ID',
             'tusu_id' => 'Tusu ID',
@@ -65,18 +61,10 @@ class tbl_usuario extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getTusu()
-    {
-        return $this->hasOne(TblTipoUsuario::class, ['tusu_id' => 'tusu_id']);
+    public function getTusu() {
+        return $this->hasOne(tbl_tipo_usuario::class, ['tusu_id' => 'tusu_id']);
     }
 
-    /**
-     * Gets query for [[Usu]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsu()
-    {
-        return $this->hasOne(TblProductoUsuario::class, ['usu_id' => 'usu_id']);
+
+    
     }
-}
