@@ -5,6 +5,7 @@ return [
 
     'dsn' => 'mysql:host=localhost;port=3306;dbname=auto',
 
+
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
