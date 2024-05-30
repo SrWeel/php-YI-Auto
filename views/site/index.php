@@ -49,7 +49,7 @@ $this->title = 'My Yii Application';
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">PROYECTO DE INVENTARIO</a>
+            <a class="navbar-brand" href="#">YII Framework</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,7 +59,7 @@ $this->title = 'My Yii Application';
         </nav>
         <div class="site-index">
             <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-                <h1 class="display-4">Bienvenido a YII Framework</h1>
+                <h1 class="display-4">PROYECTO DE INVENTARIO</h1>
             </div>
             <div class="body-content">
                 <div class="container">
@@ -68,26 +68,26 @@ $this->title = 'My Yii Application';
                         <div class="card h-100">
                             <div class="card-body text-center">
                                 <h2 class="card-title">Productos</h2>
-                                <p class="card-text">Métodos para los productos.</p>
+                                <p class="card-text">Métodos para los productos</p>
                                 <!-- Botón con estilos del otro código y funcionalidad -->
-                                <a href="<?= Yii::$app->urlManager->createUrl(['site/listar-productos']) ?>" class="btn btn-lg btn-primary">Ir a los Productos &raquo;</a>
+                                <a href="<?= Yii::$app->urlManager->createUrl(['site/listar-productos']) ?>" class="btn btn-lg btn-primary">Ir a los productos &raquo;</a>
                             </div>
                         </div>
 
-                         <div class="card h-100">
+                        <div class="card h-100">
                             <div class="card-body text-center">
                                 <h2 class="card-title">Usuarios</h2>
-                                <p class="card-text">Métodos para los productos.</p>
+                                <p class="card-text">Métodos para los usuarios.</p>
                                 <!-- Botón con estilos del otro código y funcionalidad -->
-                                <a href="<?= Yii::$app->urlManager->createUrl(['user/index']) ?>" class="btn btn-lg btn-primary">Ir a los Productos &raquo;</a>
+                                <a href="<?= Yii::$app->urlManager->createUrl(['user/index']) ?>" class="btn btn-lg btn-primary">Ir a los usuarios &raquo;</a>
                             </div>
                         </div>
 
                         <div class="card-body text-center">
                             <h2 class="card-title">Tipo de Usuario</h2>
-                            <p class="card-text">Métodos para los productos.</p>
+                            <p class="card-text">Métodos para los tipo de usuarios.</p>
                             <!-- Botón con estilos del otro código y funcionalidad -->
-                            <a href="<?= Yii::$app->urlManager->createUrl(['type/index']) ?>" class="btn btn-lg btn-primary">Ir a los Productos &raquo;</a>
+                            <a href="<?= Yii::$app->urlManager->createUrl(['type/index']) ?>" class="btn btn-lg btn-primary">Ir a los tipo usuario &raquo;</a>
                         </div>
 
                     </div>

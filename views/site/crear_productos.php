@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'pro_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'pro_cantidad')->textInput() ?>
+    <?= $form->field($model, 'pro_cantidad')->textInput(['type' => 'number']) ?>
 
     <?= $form->field($model, 'pro_precio')->textInput(['maxlength' => true]) ?>
 
