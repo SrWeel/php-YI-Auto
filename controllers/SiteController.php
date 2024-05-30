@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\tbl_producto;
+use app\models\tbl_usuario;
 
 class SiteController extends Controller
 {
@@ -99,6 +100,49 @@ class SiteController extends Controller
         $productos = tbl_producto::find()->all();
         return $this->render('listar_productos', [
             'productos' => $productos,
+        ]);
+    }
+    
+    public function actionCrearProducto()
+    {
+        $model = new tbl_producto();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['listar-productos']);
+        }
+
+        return $this->render('crear_productos', [
+            'model' => $model,
+        ]);
+    }
+     public function actionEditarProducto($id)
+    {
+        $model = tbl_producto::findOne($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['listar-productos']);
+        }
+
+        return $this->render('editar_producto', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionEliminarProducto($id)
+    {
+        $model = tbl_producto::findOne($id);
+        if ($model !== null) {
+            $model->delete();
+        }
+
+        return $this->redirect(['listar-productos']);
+    }
+    
+    public function actionListarClientes()
+    {
+        $clientes = tbl_usuario::find()->all();
+        return $this->render('listar_clientes', [
+            'clientes' => $clientes,
         ]);
     }
 }
