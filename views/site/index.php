@@ -55,6 +55,7 @@ $this->title = 'My Yii Application';
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
 
+
             </div>
         </nav>
         <div class="site-index">
@@ -91,10 +92,6 @@ $this->title = 'My Yii Application';
                         </div>
 
                     </div>
-
-
-
-
 
                 </div>
             </div>
