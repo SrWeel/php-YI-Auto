@@ -2,72 +2,69 @@
 
 namespace app\models;
 
-use yii\base\Model;
-use yii\data\ActiveDataProvider;
-use app\models\tbl_usuario;
+use yii\db\ActiveRecord;
 
 /**
- * tbl_Usuario represents the model behind the search form of `app\models\tbl_usuario`.
+ * This is the model class for table "tbl_usuario".
+ *
+ * @property int $usu_id
+ * @property int $tusu_id
+ * @property string $usu_cedula
+ * @property string $usu_nombre
+ * @property string $usu_correo
+ * @property string $usu_contra
+ * @property string $usu_estado
+ *
+ * @property TblTipoUsuario $tusu
  */
-class tbl_Usuario extends tbl_usuario
+class tbl_usuario extends ActiveRecord
 {
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return 'tbl_usuario';
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['usu_id', 'tusu_id'], 'integer'],
-            [['usu_cedula', 'usu_nombre', 'usu_correo', 'usu_contra', 'usu_estado'], 'safe'],
+            [['tusu_id', 'usu_cedula', 'usu_nombre', 'usu_correo', 'usu_contra', 'usu_estado'], 'required'],
+            [['tusu_id'], 'integer'],
+            [['usu_cedula'], 'string', 'max' => 10],
+            [['usu_nombre', 'usu_correo', 'usu_contra'], 'string', 'max' => 150],
+            [['usu_estado'], 'string', 'max' => 1],
+            [['tusu_id'], 'exist', 'skipOnError' => true, 'targetClass' => TblTipoUsuario::class, 'targetAttribute' => ['tusu_id' => 'tusu_id']],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function scenarios()
+    public function attributeLabels()
     {
-        // bypass scenarios() implementation in the parent class
-        return Model::scenarios();
+        return [
+            'usu_id' => 'Usu ID',
+            'tusu_id' => 'Tusu ID',
+            'usu_cedula' => 'Usu Cedula',
+            'usu_nombre' => 'Usu Nombre',
+            'usu_correo' => 'Usu Correo',
+            'usu_contra' => 'Usu Contra',
+            'usu_estado' => 'Usu Estado',
+        ];
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Gets query for [[Tusu]].
      *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
+     * @return \yii\db\ActiveQuery
      */
-    public function search($params)
+    public function getTusu()
     {
-        $query = tbl_usuario::find();
-
-        // add conditions that should always apply here
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
-            return $dataProvider;
-        }
-
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'usu_id' => $this->usu_id,
-            'tusu_id' => $this->tusu_id,
-        ]);
-
-        $query->andFilterWhere(['like', 'usu_cedula', $this->usu_cedula])
-            ->andFilterWhere(['like', 'usu_nombre', $this->usu_nombre])
-            ->andFilterWhere(['like', 'usu_correo', $this->usu_correo])
-            ->andFilterWhere(['like', 'usu_contra', $this->usu_contra])
-            ->andFilterWhere(['like', 'usu_estado', $this->usu_estado]);
-
-        return $dataProvider;
+        return $this->hasOne(TblTipoUsuario::class, ['tusu_id' => 'tusu_id']);
     }
 }
