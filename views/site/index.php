@@ -67,6 +67,7 @@ $this->title = 'My Yii Application';
             <div class="container">
                 <div class="row">
 
+
                         <div class="card h-100">
         <div class="card-body text-center">
             <h2 class="card-title">Productos</h2>
@@ -86,6 +87,7 @@ $this->title = 'My Yii Application';
 
                 </div>
             </div>
+
 
                 </div>
 

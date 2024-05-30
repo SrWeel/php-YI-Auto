@@ -10,7 +10,9 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\tbl_producto;
+
 use app\models\tbl_usuario;
+
 
 class SiteController extends Controller
 {
@@ -102,6 +104,7 @@ class SiteController extends Controller
             'productos' => $productos,
         ]);
     }
+
     
     public function actionCrearProducto()
     {
@@ -145,4 +148,5 @@ class SiteController extends Controller
             'clientes' => $clientes,
         ]);
     }
+
 }
