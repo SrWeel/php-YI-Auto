@@ -4,50 +4,104 @@
 
 $this->title = 'My Yii Application';
 ?>
-<div class="site-index">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $this->title ?></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .jumbotron {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+        }
+        .jumbotron h1 {
+            font-size: 3.5rem;
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">PROYECTO DE INVENTARIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+        </div>
+    </nav>
+    <div class="site-index">
+        <div class="jumbotron text-center bg-transparent mt-5 mb-5">
+            <h1 class="display-4">Bienvenido a YII Framework</h1>
+        </div>
+        <div class="body-content">
+            <div class="container">
+                <div class="row">
 
-    <div class="jumbotron text-center bg-transparent mt-5 mb-5">
-        <h1 class="display-4">Congratulations!</h1>
+                        <div class="card h-100">
+        <div class="card-body text-center">
+            <h2 class="card-title">Productos</h2>
+            <p class="card-text">Métodos para los productos.</p>
+            <!-- Botón con estilos del otro código y funcionalidad -->
+            <a href="<?= Yii::$app->urlManager->createUrl(['site/listar-productos']) ?>" class="btn btn-lg btn-primary">Ir a los Productos &raquo;</a>
+        </div>
+                </div>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body text-center">
+                                <h2 class="card-title">Usuarios</h2>
+                                <p class="card-text">Métodos para los usuarios.</p>
+                                <a href="/crud2" class="btn btn-outline-secondary">Ir a los Usuarios &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+                </div>
 
-    <div class="body-content">
+            
 
-        <div class="row">
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4 mb-3">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
             </div>
         </div>
-
     </div>
-</div>
+    <footer>
+
+        <p>&copy; <?= date('Y') ?> Proyecto Autónomo.</p>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
