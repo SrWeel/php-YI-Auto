@@ -67,6 +67,7 @@ $this->title = 'My Yii Application';
             <div class="container">
                 <div class="row">
 
+
                         <div class="card h-100">
         <div class="card-body text-center">
             <h2 class="card-title">Productos</h2>
@@ -75,16 +76,18 @@ $this->title = 'My Yii Application';
             <a href="<?= Yii::$app->urlManager->createUrl(['site/listar-productos']) ?>" class="btn btn-lg btn-primary">Ir a los Productos &raquo;</a>
         </div>
                 </div>
+                   
 
-                    <div class="col-lg-6 mb-4">
-                        <div class="card h-100">
-                            <div class="card-body text-center">
-                                <h2 class="card-title">Usuarios</h2>
-                                <p class="card-text">Métodos para los usuarios.</p>
-                                <a href="/crud2" class="btn btn-outline-secondary">Ir a los Usuarios &raquo;</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h2 class="card-title">Clientes</h2>
+                    <p class="card-text">Métodos para los clientes.</p>
+                    <!-- Botón para redirigir a listar_clientes -->
+                    <a href="<?= Yii::$app->urlManager->createUrl(['site/listar-clientes']) ?>" class="btn btn-lg btn-primary">Ir a los Clientes &raquo;</a>
+
+                </div>
+            </div>
+
 
                 </div>
 
