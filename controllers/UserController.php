@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\tbl_usuario;
+use app\models\tbl_tipo_usuario;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

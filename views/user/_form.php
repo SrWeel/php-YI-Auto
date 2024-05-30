@@ -12,9 +12,12 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'usu_id')->textInput() ?>
+    <?=
+    $form->field($model, 'tusu_id')->dropDownList(
+            \yii\helpers\ArrayHelper::map(\app\models\tbl_tipo_usuario::find()->all(), 'tusu_id', 'tusu_nombre'), ['prompt' => 'Seleccionar Tipo de Usuario']
+    )
+    ?>
 
-    <?= $form->field($model, 'tusu_id')->textInput() ?>
 
     <?= $form->field($model, 'usu_cedula')->textInput(['maxlength' => true]) ?>
 
@@ -24,12 +27,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'usu_contra')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'usu_estado')->textInput(['maxlength' => true]) ?>
+<?= $form->field($model, 'usu_estado')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+<?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>
 
 </div>
