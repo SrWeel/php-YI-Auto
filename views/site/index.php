@@ -66,6 +66,7 @@ $this->title = 'My Yii Application';
         <div class="body-content">
             <div class="container">
                 <div class="row">
+
                         <div class="card h-100">
         <div class="card-body text-center">
             <h2 class="card-title">Productos</h2>
@@ -74,6 +75,7 @@ $this->title = 'My Yii Application';
             <a href="<?= Yii::$app->urlManager->createUrl(['site/listar-productos']) ?>" class="btn btn-lg btn-primary">Ir a los Productos &raquo;</a>
         </div>
                 </div>
+
                     <div class="col-lg-6 mb-4">
                         <div class="card h-100">
                             <div class="card-body text-center">
@@ -83,16 +85,20 @@ $this->title = 'My Yii Application';
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <!-- Nuevo bloque para el enlace a la lista de productos -->
+
             
+
 
 
             </div>
         </div>
     </div>
     <footer>
+
         <p>&copy; <?= date('Y') ?> Proyecto Autónomo.</p>
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
